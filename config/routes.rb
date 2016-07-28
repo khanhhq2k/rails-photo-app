@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
+  devise_for :users
   
   root 'pages#home'
   get 'pages/about', to: "pages#about"
   get 'pages/home', to: "pages#home"
+  resources :photos
+  resources :albums
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,13 @@
+<h1>Home Page</h1>
+
+<% if user_signed_in? %>
+  <p>I'm signed in</p>
+  <li>
+  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+  </li>
+<% else %>
+ <p>I'm not signed in</p>
+  <li>
+  <%= link_to('Login', new_user_session_path)  %>  
+  </li>
+<% end %>

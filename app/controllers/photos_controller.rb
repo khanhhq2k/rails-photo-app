@@ -38,15 +38,6 @@ class PhotosController < ApplicationController
         end
       }
     end
-    # @photo = Photo.find(params[:id])
-    # @photo = PhotoService.new(photo_params: photo_params, photo_id: params[:id], current_user: current_user).update_photo
-    # if @photo == false
-    #   flash.now[:danger] = "Unable to update photo!"
-    #   render :edit
-    # else
-    #   flash[:success] = "Photo Updated!"
-    #   redirect_to root_path
-    # end    
   end  
   
   def show
@@ -54,7 +45,18 @@ class PhotosController < ApplicationController
   end
   
   def destroy
-    
+    @result = PhotoService.new(photo_id: params[:id])
+                            .delete_photo
+    respond_to do |format|
+      format.html {
+        if @result[:success]
+          flash[:success] = @result[:success]
+          redirect_to photos_path
+        else
+          flash[:danger] = result[:error]
+        end
+      }
+    end
   end
   
   private

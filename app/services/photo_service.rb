@@ -24,4 +24,16 @@ class PhotoService
     result
   end
   
+  def delete_photo
+    @photo = Photo.find(@photo_id)
+    result = {}
+    if @photo.destroy
+      result[:success] = "Photo Deleted!"
+    else
+      result[:error] = "#{@photo.errors.full_messages.to_sentence}"
+    end
+    result[:photo] = @photo
+    result
+  end
+  
 end

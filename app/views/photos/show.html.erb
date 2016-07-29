@@ -1,17 +1,18 @@
-<p>
-  <strong>Title:</strong>
-  <%= @photo.title %>
-</p>
+<div class="container photo-show">
+  <div class="row">
+    <div class="col-xs-9">
+      <%= image_tag @photo.image.url(:medium), width: "100%" if @photo.image.present? %>
+    </div>
+    
+    <div class="col-xs-3">
+      <p><b>Title: </b><%= @photo.title%></p>
+      <p><b>Description: </b><%= @photo.description %></p>
+      <p>
+        <%= link_to 'Edit', edit_photo_path(@photo), class:"btn btn-xs btn-primary" %>
+        <%= link_to "Delete", photo_path(@photo), method: :delete, data: {confirm: "Are you sure to remove this photo?"}, class:"btn btn-xs btn-danger" %>
+        <%= link_to 'Back', photos_path, class:"btn btn-xs btn-success" %>    
+      </p>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @photo.description %>
-</p>
-
-<p>
-  <%= image_tag @photo.image.url(:medium) %>
-</p>
-
-<%= link_to 'Edit', edit_photo_path(@photo), class:"btn btn-xs btn-primary" %>
-<%= link_to "Delete", photo_path(@photo), method: :delete, data: {confirm: "Are you sure to remove this photo?"}, class:"btn btn-xs btn-danger" %>
-<%= link_to 'Back', photos_path, class:"btn btn-xs btn-success" %>

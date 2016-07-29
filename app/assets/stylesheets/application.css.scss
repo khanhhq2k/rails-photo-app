@@ -17,3 +17,13 @@
 @import "bootstrap";
 @import "pages";
 @import "users";
+@import "photos";
+
+footer {
+  margin: auto;
+  margin-top: 45px;
+  width: 30%;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}

@@ -38,9 +38,6 @@ class PhotosController < ApplicationController
         end
       }
     end
-      
-
-   
     # @photo = Photo.find(params[:id])
     # @photo = PhotoService.new(photo_params: photo_params, photo_id: params[:id], current_user: current_user).update_photo
     # if @photo == false
@@ -56,15 +53,13 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
   end
   
-
-  
   def destroy
     
   end
   
   private
     def photo_params
-      params.require(:photo).permit(:title, :description, :image)
+      params.require(:photo).permit(:title, :description, :image, :public)
     end
   
 end

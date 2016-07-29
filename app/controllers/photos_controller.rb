@@ -16,7 +16,7 @@ class PhotosController < ApplicationController
   end
   
   def index
-    @photos = Photo.page(params[:page])
+    @photos = Photo.public_photos.page(params[:page])
   end
   
   def edit

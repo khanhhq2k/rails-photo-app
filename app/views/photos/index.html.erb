@@ -1,1 +1,17 @@
-<h1>Photos Index</h1>
+<div class="container photo-index">
+  <h1>Listing photos</h1>
+  <% @photos.in_groups_of(4) do |group| %>
+    <div class="row">
+      <% group.compact.each do |photo| %>
+        <div class="col-xs-3">
+          <%= image_tag photo.image.url(:medium), :width => '100%' if photo.image.present? %>
+          <h4 align="center"><%= link_to photo.title, photo %></h4>
+        </div>
+      <% end %>
+    </div>
+  <% end %> 
+  <div class="row">
+    <%= paginate @photos %>
+  </div>
+</div>
+

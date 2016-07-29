@@ -14,8 +14,14 @@ class PhotoService
   
   def update_photo
     @photo = Photo.find(@photo_id)
-    @photo.update(@photo_params)
-    @photo
+    result = {}
+    if @photo.update(@photo_params)
+      result[:success] = "Photo Updated!"
+    else
+      result[:error] = "#{@photo.errors.full_messages.to_sentence}"
+    end
+    result[:photo] = @photo
+    result
   end
   
 end

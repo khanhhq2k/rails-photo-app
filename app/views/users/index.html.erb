@@ -1,0 +1,5 @@
+<h1 align="center">Listing Your Photos</h1>
+<%= render partial: "photos/photo", object: @photos %>
+<div align="center">
+  <%= paginate @photos %>
+</div>

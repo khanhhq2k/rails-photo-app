@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-  
+  load_and_authorize_resource
   def create
     @photo = PhotoService.new(photo_params: photo_params, current_user: current_user).create_photo
     if @photo.id?

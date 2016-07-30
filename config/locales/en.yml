@@ -20,4 +20,16 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  title: "Instagram Clone"
   hello: "Hello world"
+  photos:
+    create:
+      success: "Photo created!"
+    update:
+      success: "Photo Updated!"
+    destroy:
+      success: "Photo Deleted!"
+    index:
+      no-photo: "There is no photos to show!"
+      header: "Listing photos"
+      user-header: "Listing Your Photos"

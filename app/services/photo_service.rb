@@ -16,7 +16,7 @@ class PhotoService
     @photo = Photo.find(@photo_id)
     result = {}
     if @photo.update(@photo_params)
-      result[:success] = "Photo Updated!"
+      result[:success] = I18n.t "photos.update.success"
     else
       result[:error] = "#{@photo.errors.full_messages.to_sentence}"
     end
@@ -28,7 +28,7 @@ class PhotoService
     @photo = Photo.find(@photo_id)
     result = {}
     if @photo.destroy
-      result[:success] = "Photo Deleted!"
+      result[:success] = I18n.t "photos.destroy.success"
     else
       result[:error] = "#{@photo.errors.full_messages.to_sentence}"
     end

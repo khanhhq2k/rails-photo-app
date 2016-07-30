@@ -1,6 +1,6 @@
 <div class="container photo-index">
   <% if @photos.empty? %>
-    <h5>There is no photos to show</h5>
+    <h5><%= t 'photos.index.no-photo' %></h5>
   <% end %>
   <% @photos.in_groups_of(4) do |group| %>
     <div class="row">

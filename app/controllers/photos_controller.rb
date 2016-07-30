@@ -3,7 +3,7 @@ class PhotosController < ApplicationController
   def create
     @photo = PhotoService.new(photo_params: photo_params, current_user: current_user).create_photo
     if @photo.id?
-      flash[:success] = "Photo created!"
+      flash[:success] = t ".success"
       redirect_to photo_path(@photo)
     else
       flash.now[:danger] = "#{@photo.errors.full_messages.to_sentence}"
@@ -29,11 +29,11 @@ class PhotosController < ApplicationController
     respond_to do |format|
       format.html {
         if @result[:success]
-          flash.now[:success] = @result[:success]
+          flash[:success] = @result[:success]
           redirect_to photo_path(@result[:photo])
         else
-          flash.now[:danger] = result[:error]
-          @photo  =  @result[:photo]
+          flash[:danger] = result[:error]
+          @photo = @result[:photo]
           render :edit
         end
       }

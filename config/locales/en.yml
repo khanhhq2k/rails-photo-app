@@ -22,6 +22,8 @@
 en:
   title: "Instagram Clone"
   hello: "Hello world"
+  application:
+    denial: "Access Denied!"
   photos:
     create:
       success: "Photo created!"
@@ -33,3 +35,6 @@ en:
       no-photo: "There is no photos to show!"
       header: "Listing photos"
       user-header: "Listing Your Photos"
+  users:
+    manage:
+      admin-header: "Manage Users Page"

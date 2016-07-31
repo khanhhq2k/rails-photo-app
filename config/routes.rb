@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :users, only: [] do
+  resources :users, only: [:destroy] do
+    collection do
+      get 'manage'
+    end
+    member do
+      put :toggle
+    end
     resources :photos, :controller=>:users, only: [:index]
   end
   

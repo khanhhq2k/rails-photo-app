@@ -1,0 +1,7 @@
+<tr>
+  <td><%= user.email %></td>
+  <td><%= user.name %></td>
+  <td><%= user.active %></td>
+  <td><%= link_to 'Toggle', toggle_user_path(user), method: :put %></td>
+  <td><%= link_to 'Delete', user_path(user), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

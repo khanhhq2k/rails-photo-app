@@ -1,4 +1,5 @@
 class PhotosController < ApplicationController
+  before_action :authenticate_user!, only: :new
   load_and_authorize_resource
   def create
     @photo = PhotoService.new(photo_params: photo_params, current_user: current_user).create_photo

@@ -38,3 +38,6 @@ en:
   users:
     manage:
       admin-header: "Manage Users Page"
+  devise:
+    sessions:
+      login-header: "Log in User"

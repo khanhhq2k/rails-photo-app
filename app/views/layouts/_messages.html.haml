@@ -1,0 +1,5 @@
+.container
+  - flash.each do |name, msg|
+    .alert.alert-info
+      %a.close{"data-dismiss" => "alert", :href => "#"} ×
+      = content_tag :div, msg, :id =>"flash_#{name}" if msg.is_a?(String)

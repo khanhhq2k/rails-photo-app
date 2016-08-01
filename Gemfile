@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'rspec-rails'
 gem "haml"
 gem 'cancancan', '~> 1.10'
 gem 'devise'

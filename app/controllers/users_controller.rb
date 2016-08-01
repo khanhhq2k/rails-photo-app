@@ -10,13 +10,13 @@ class UsersController < ApplicationController
   def toggle
     @user = User.find(params[:id])
     @user.toggle!(:active)
-    flash[:success] = "Successfully Toggle User Status!"
+    flash[:success] = t '.toggle_message'
     redirect_to manage_users_path
   end
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    flash[:success] = "User destroyed."
+    flash[:success] = t '.destroy_user_message'
     redirect_to manage_users_path
   end
 end

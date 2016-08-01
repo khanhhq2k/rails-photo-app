@@ -38,6 +38,14 @@ en:
   users:
     manage:
       admin-header: "Manage Users Page"
+    toggle:
+      toggle_message: "Successfully Toggle User Status!"
+    destroy:
+      destroy_user_message: "User destroyed."
   devise:
     sessions:
       login-header: "Log in User"
+  activerecord:
+    models:
+      user:
+        inactive_message: "Sorry, this account has been deactivated."

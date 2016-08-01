@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :photos, dependent: :destroy
   has_many :albums, dependent: :destroy
+  validates :name, presence: true
+  validates :name, length: {minimum: 5}
   scope :all_except, ->(user) { where.not(id: user)}
 
   def active_for_authentication?    # override this method to check if user is deactivated
@@ -16,6 +18,6 @@ class User < ActiveRecord::Base
   end
   
   def inactive_message              #deactivation message
-    "Sorry, this account has been deactivated."
+    I18n.t "activerecord.models.user.inactive_message"
   end
 end

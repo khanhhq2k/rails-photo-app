@@ -1,18 +1,12 @@
-<div class="container admin-form">
-  <h1 align="center"><%= t '.admin-header' %></h1>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Email</th>
-        <th>Name</th>
-        <th>Active?</th>
-        <th colspan="2"></th>
-  
-      </tr>
-    </thead>
-  
-    <tbody id="users">
-      <%= render @users %>
-    <tbody>
-  </table>  
-</div>
+.container.admin-form
+  %h1{:align => "center"}= t '.admin-header'
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Email
+        %th Name
+        %th Active?
+        %th{:colspan => "2"}
+    %tbody#users
+      = render @users
+    %tbody

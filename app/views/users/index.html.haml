@@ -1,5 +1,4 @@
-<h1 align="center"><%= t 'photos.index.user-header' %></h1>
-<%= render partial: "photos/photo", object: @photos %>
-<div align="center">
-  <%= paginate @photos %>
-</div>
+%h1{:align => "center"}= t 'photos.index.user-header'
+= render partial: "photos/photo", object: @photos
+%div{:align => "center"}
+  = paginate @photos

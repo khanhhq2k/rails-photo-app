@@ -18,6 +18,6 @@ class User < ActiveRecord::Base
   end
   
   def inactive_message              #deactivation message
-    I18n.t "activerecord.models.user.inactive_message"
+    I18n.t "inactive_user_message"
   end
 end

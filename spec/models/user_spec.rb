@@ -22,7 +22,7 @@ RSpec.describe User, type: :model do
       @user.name = "khanh"
       expect(@user).to be_valid
     end
-    it "is valid when name length is greater 5 chars" do
+    it "is valid when name length is greater than 5 chars" do
       @user.name = "khanhhq2k"
       expect(@user).to be_valid
     end    

@@ -45,7 +45,4 @@ en:
   devise:
     sessions:
       login-header: "Log in User"
-  activerecord:
-    models:
-      user:
-        inactive_message: "Sorry, this account has been deactivated."
+  inactive_user_message: "Sorry, this account has been deactivated."

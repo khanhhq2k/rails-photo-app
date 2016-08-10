@@ -8,13 +8,14 @@ Rails.application.routes.draw do
       put :toggle
     end
     resources :photos, :controller=>:users, only: [:index]
+    # resources :albums, shallow: true
   end
   
   root 'pages#home'
   get 'pages/about', to: "pages#about"
   get 'pages/home', to: "pages#home"
   resources :photos
-  # resources :albums
+  resources :albums
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

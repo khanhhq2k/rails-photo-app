@@ -12,6 +12,13 @@ class Ability
       end
       can :destroy, Photo do |photo|
         photo.user == user
+      end
+      can :create, Album
+      can :update, Album do |album|
+        album.user == user
+      end
+      can :destroy, Album do |album|
+        album.user == user
       end      
     end
     if user.admin     #For Admin only

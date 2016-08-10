@@ -1,0 +1,33 @@
+<h1 align="center">Album Show page</h1>
+<div class="container photo-index">
+  <div class="row">
+    <div class="col-xs-9">
+      <% if @album.photos.empty? %>
+        <h5><%= t 'photos.index.no-photo' %></h5>
+      <% end %>
+      <% @album.photos.in_groups_of(4) do |group| %>
+        <div class="row">
+          <% group.compact.each do |photo| %>
+            <div class="col-xs-3">
+              <%= image_tag photo.image.url(:thumb), :width => '100%' if photo.image.present? %>
+              <h4 align="center"><%= link_to photo.title, photo %></h4>
+            </div>
+          <% end %>
+        </div>
+      <% end %>        
+    </div>
+    <div class="col-xs-3">
+      <p><b>Title: </b><%= @album.title%></p>
+      <p><b>Description: </b><%= @album.description %></p>
+      <p>
+        <% if can? :update, @album %>
+          <%= link_to 'Edit', edit_album_path(@album), class:"btn btn-xs btn-primary" %>
+        <% end %>
+        <% if can? :destroy , @album %>
+          <%= link_to "Delete", album_path(@album), method: :delete, data: {confirm: "Are you sure to remove this album?"}, class: "btn btn-xs btn-danger" %>
+        <% end %>        
+        <%= link_to 'Back', albums_path, class:"btn btn-xs btn-success" %>    
+      </p>      
+    </div>
+  </div>
+</div>

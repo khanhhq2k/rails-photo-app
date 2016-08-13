@@ -22,7 +22,7 @@ class AlbumsController < ApplicationController
       end
       redirect_to album_path(@album)
     else
-      flash[:error] = "Failed to create album!"
+      flash[:danger] = "Failed to create album!"
       render :new
     end
   end

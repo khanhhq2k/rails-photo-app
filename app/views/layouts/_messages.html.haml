@@ -1,5 +1,8 @@
 .container
-  - flash.each do |name, msg|
-    .alert.alert-info
-      %a.close{"data-dismiss" => "alert", :href => "#"} ×
-      = content_tag :div, msg, :id =>"flash_#{name}" if msg.is_a?(String)
+  .row
+    .col-xs-10.col-xs-offset-1
+      - flash.each do |name, msg|
+        %div{:class => "alert alert-#{"#{name}"}"}
+          %a.close{"data-dismiss" => "alert", :href => "#"} ×
+          = content_tag :div, msg, :id =>"flash_#{name}" if msg.is_a?(String)
+

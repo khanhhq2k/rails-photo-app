@@ -3,12 +3,12 @@
     .navbar-header
       = link_to '<span class="navbar-brand">Photo App</span>'.html_safe, root_path
     %ul.nav.navbar-nav
-      %li.active= link_to 'Dashboard', photos_path
+      %li{:class => "#{'active' if current_page?(photos_path)}"}= link_to 'Dashboard', photos_path
       - if user_signed_in?
-        %li= link_to 'New Photo', new_photo_path
-        %li= link_to 'Your Photos', user_photos_path(user_id: current_user.id)
+        %li{:class => "#{'active' if current_page?(new_photo_path)}"}= link_to 'New Photo', new_photo_path
+        %li{:class => "#{'active' if current_page?(user_photos_path(user_id: current_user.id))}"}= link_to 'Your Photos', user_photos_path(user_id: current_user.id)
       - if user_signed_in? && current_user.admin
-        %li= link_to 'Admin Panel', manage_users_path
+        %li{:class => "#{'active' if current_page?(manage_users_path)}"}= link_to 'Admin Panel', manage_users_path
     %ul.nav.navbar-nav.navbar-right
       - if user_signed_in?
         %li= link_to current_user.name, edit_user_registration_path

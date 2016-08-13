@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'jquery-validation-rails'
 gem "twitter-bootstrap-rails"
 gem 'bootbox-rails'
 gem 'rspec-rails'

@@ -11,6 +11,8 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.validate
+//= require jquery.validate.additional-methods
 //= require bootbox
 //= require jquery_ujs
 //= require turbolinks
@@ -46,17 +48,46 @@ $.rails.showConfirmationDialog = function(link){
   });
 }
 
-$(document).ready(function(){
-// 	var pathname = window.location.pathname;
-// 	$('li.nav-element > a[href="'+pathname+'"]').parent().addClass('active');
+$(document).ready(function () {
+  // Validation for forms
+  $("#new_album").validate({
+    debug: true,
+    rules: {
+    "album[title]": {required: true, minlength: 5, maxlength: 30},
+    "album[description]": {required: true}
+    },
+  });
+  
+  $("#new_photo").validate({
+    debug: true,
+    rules: {
+      "photo[title]": {
+        required: true, minlength: 5, maxlength: 30
+      },
+      "photo[image]": {
+        required: true
+      }
+      
+    },
 
-
-  // $("li.nav-element").on("click", function(e){
-  //   $(this).addClass('active');
-
-  // });
-  // var url = window.location;
-  // $('li.nav-element a').filter(function() {
-  //     return this.href == url;
-  // }).parent().addClass('active');
+  });
+  
+  $("#new_user").validate({
+    debug: true,
+    rules: {
+      "user[email]": {
+        required: true, email: true
+      },
+      "user[name]": {
+        required: true, minlength: 5
+      },
+      "user[password]": {
+        required: true
+      },
+      "user[password_confirmation]": {
+        required: true,
+        equalTo: "#user_password"
+      }
+    },
+  });  
 });

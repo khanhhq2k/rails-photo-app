@@ -2,20 +2,22 @@
   .container-fluid
     .navbar-header
       = link_to '<span class="navbar-brand">Photo App</span>'.html_safe, root_path
-    %ul.nav.navbar-nav
+    %ul#myNav1.nav.navbar-nav
       %li{:class => "#{'active' if current_page?(photos_path)}"}= link_to 'Dashboard', photos_path
       - if user_signed_in?
         %li{:class => "#{'active' if current_page?(new_photo_path)}"}= link_to 'New Photo', new_photo_path
         %li{:class => "#{'active' if current_page?(new_album_path)}"}= link_to 'New Album', new_album_path
         %li{:class => "#{'active' if current_page?(user_photos_path(user_id: current_user.id))}"}= link_to 'Your Photos', user_photos_path(user_id: current_user.id)
         %li{:class => "#{'active' if current_page?(albums_path)}"}= link_to 'Your Albums', albums_path
-        
       - if user_signed_in? && current_user.admin
         %li{:class => "#{'active' if current_page?(manage_users_path)}"}= link_to 'Admin Panel', manage_users_path
-    %ul.nav.navbar-nav.navbar-right
+      %li.icon
+        %a{:href => "javascript:void(0);"} ☰
+    %ul#myNav2.nav.navbar-nav.navbar-right
       - if user_signed_in?
         %li= link_to current_user.name, edit_user_registration_path
         %li= link_to '<span class="glyphicon glyphicon-log-out"></span> Log Out'.html_safe, destroy_user_session_path, :method => :delete
       - else
         %li= link_to '<span class="glyphicon glyphicon-user"></span> Sign Up'.html_safe, new_user_registration_path
         %li= link_to '<span class="glyphicon glyphicon-log-in"></span> Log In'.html_safe, new_user_session_path
+

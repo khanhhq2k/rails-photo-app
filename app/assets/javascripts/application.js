@@ -85,5 +85,8 @@ $(document).ready(function () {
         equalTo: "#user_password"
       }
     },
-  });  
+  });
+  $("li.icon").on("click", function(){
+    $("#myNav1,#myNav2").toggleClass("responsive");
+  });
 });

@@ -1,5 +1,5 @@
 class AlbumsController < ApplicationController
-  before_action :authenticate_user!, only: :new
+  before_action :authenticate_user!, only: [:new, :index]
   load_and_authorize_resource  
   def index
     @albums = current_user.albums.page(params[:page])

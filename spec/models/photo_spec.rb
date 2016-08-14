@@ -39,6 +39,6 @@ RSpec.describe Photo, type: :model do
   it "is valid when image is attached" do
     @photo = Photo.new(title: "Photo title", description: "sample description")
     @photo.image = File.new("app/assets/images/images.jpg")
-    expect(@photo).to_not be_valid
+    expect(@photo).to be_valid
   end    
 end

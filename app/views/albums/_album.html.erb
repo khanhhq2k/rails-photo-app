@@ -1,6 +1,6 @@
 <div class="container album-index">
   <% if @albums.empty? %>
-    <h5><%= t 'photos.index.no-photo' %></h5>
+    <h5><%= t 'albums.index.no-album' %></h5>
   <% end %>
   <% @albums.in_groups_of(4) do |group| %>
     <div class="row">

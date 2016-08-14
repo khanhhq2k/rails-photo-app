@@ -5,5 +5,5 @@
     .row
       - group.compact.each do |photo|
         .col-xs-3
-          = image_tag photo.image.url(:thumb), :width => '100%' if photo.image.present?
+          = image_tag photo.image.url(:thumb), :width => '100%'
           %h4{:align => "center"}= link_to photo.title, photo

@@ -1,7 +1,7 @@
 .container.photo-show
   .row
     .col-xs-9
-      = image_tag @photo.image.url(:medium), width: "100%" if @photo.image.present?
+      = image_tag @photo.image.url(:medium), width: "100%"
     .col-xs-3
       %p
         %b Title:

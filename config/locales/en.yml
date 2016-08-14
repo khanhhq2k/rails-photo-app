@@ -35,6 +35,9 @@ en:
       no-photo: "There is no photos to show!"
       header: "Listing photos"
       user-header: "Listing Your Photos"
+  albums:
+    index:
+      no-album: "There is no albums to show!"
   users:
     manage:
       admin-header: "Manage Users Page"

@@ -51,7 +51,6 @@ $.rails.showConfirmationDialog = function(link){
 $(document).ready(function () {
   // Validation for forms
   $("#new_album").validate({
-    debug: true,
     rules: {
     "album[title]": {required: true, minlength: 5, maxlength: 30},
     "album[description]": {required: true}
@@ -59,7 +58,6 @@ $(document).ready(function () {
   });
   
   $("#new_photo").validate({
-    debug: true,
     rules: {
       "photo[title]": {
         required: true, minlength: 5, maxlength: 30
@@ -67,13 +65,11 @@ $(document).ready(function () {
       "photo[image]": {
         required: true
       }
-      
     },
 
   });
   
   $("#new_user").validate({
-    debug: true,
     rules: {
       "user[email]": {
         required: true, email: true

@@ -61,6 +61,10 @@ en:
     create:
       success: "Successfully created album!"
       failed: "Failed to create album!"
+    show:
+      show_title: "Album Show Page"
+      title: "Title"
+      description: "Description"
     update:
       success: "Successfully updated album!"
       failed: "Failed to update album!"

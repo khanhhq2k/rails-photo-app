@@ -1,0 +1,8 @@
+.container.album-index
+  - if @albums.empty?
+    %h5= t 'albums.index.no-album'
+  - @albums.in_groups_of(4) do |group|
+    .row
+      - group.compact.each do |album|
+        .col-xs-3
+          %h4{:align => "center"}= link_to album.title, album

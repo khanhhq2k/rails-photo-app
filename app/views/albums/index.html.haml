@@ -1,0 +1,4 @@
+%h1{:align => "center"}= t(".index_title")
+= render partial: "album", object: @albums
+%div{:align => "center"}
+  = paginate @albums

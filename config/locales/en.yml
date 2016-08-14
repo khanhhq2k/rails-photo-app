@@ -20,10 +20,25 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  edit: "Edit"
+  delete: "Delete"
+  back: "Back"
+  submit: "Submit"
+  toggle: "Toggle"
+  upload: "Upload"
+  private: "Private"
+  public: "Public"
+  login: "Login"
+  signup: "Sign Up"
   title: "Instagram Clone"
   hello: "Hello world"
   application:
     denial: "Access Denied!"
+  pages:
+    about:
+      about_title: "About Us"
+    home:
+      home_title: "Rails Photo Application"
   photos:
     create:
       success: "Photo created!"
@@ -36,16 +51,37 @@ en:
       header: "Listing photos"
       user-header: "Listing Your Photos"
   albums:
+    new:
+      new_title: "New Album"
+    edit:
+      edit_title: "Edit Album"
     index:
       no-album: "There is no albums to show!"
+      index_title: "Album Index"
+    create:
+      success: "Successfully created album!"
+      failed: "Failed to create album!"
+    update:
+      success: "Successfully updated album!"
+      failed: "Failed to update album!"
+    destroy:
+      success: "Successfully deleted album and its photos"
+      failed: "Failed to delete album!"
+      confirm: "Are you sure to remove this album?"
   users:
     manage:
       admin-header: "Manage Users Page"
+      email: "Email"
+      name: "Name"
+      active: "Active?"
     toggle:
       toggle_message: "Successfully Toggle User Status!"
     destroy:
       destroy_user_message: "User destroyed."
+      confirm: "Are you sure you want do delete this user?"
   devise:
     sessions:
       login-header: "Log in User"
+    registrations:
+      title: "Sign Up User"      
   inactive_user_message: "Sorry, this account has been deactivated."

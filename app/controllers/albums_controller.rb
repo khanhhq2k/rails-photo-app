@@ -13,7 +13,7 @@ class AlbumsController < ApplicationController
     # @album = Album.new(album_params)
     @album.user = current_user    
     if @album.save
-      flash[:success] = "Successfully created album!"
+      flash[:success] = t ".success"
       if params[:images]
         params[:images].each do |image|
           @album.photos.create(title: params[:album][:title], description: params[:album][:description], 
@@ -22,7 +22,7 @@ class AlbumsController < ApplicationController
       end
       redirect_to album_path(@album)
     else
-      flash[:danger] = "Failed to create album!"
+      flash[:danger] = t ".failed"
       render :new
     end
   end
@@ -38,7 +38,7 @@ class AlbumsController < ApplicationController
   def update
     # @album = Album.find(params[:id])
     if @album.update(album_params)
-      flash[:success] = "Successfully updated album!"
+      flash[:success] = t ".success"
       if params[:images]
         params[:images].each do |image|
           @album.photos.create(title: params[:album][:title], description: params[:album][:description], 
@@ -47,7 +47,7 @@ class AlbumsController < ApplicationController
       end
       redirect_to album_path(@album)
     else
-      flash[:danger] = "Failed to update album!"
+      flash[:danger] = t ".failed"
       render :edit
     end    
   end
@@ -55,10 +55,10 @@ class AlbumsController < ApplicationController
   def destroy
     # @album = Album.find(params[:id])
     if @album.destroy
-      flash[:success] = "Successfully deleted album and its photos"
+      flash[:success] = t ".success"
       redirect_to albums_path
     else
-      flash[:danger] = "Failed to delete album!"
+      flash[:danger] = t ".failed"
       redirect_to albums_path      
     end
   end

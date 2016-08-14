@@ -21,12 +21,12 @@
       <p><b>Description: </b><%= @album.description %></p>
       <p>
         <% if can? :update, @album %>
-          <%= link_to 'Edit', edit_album_path(@album), class:"btn btn-xs btn-primary" %>
+          <%= link_to t('edit'), edit_album_path(@album), class:"btn btn-xs btn-primary" %>
         <% end %>
         <% if can? :destroy , @album %>
-          <%= link_to "Delete", album_path(@album), method: :delete, data: {confirm: "Are you sure to remove this album?"}, class: "btn btn-xs btn-danger" %>
+          <%= link_to t('delete'), album_path(@album), method: :delete, data: {confirm: t("albums.destroy.confirm") }, class: "btn btn-xs btn-danger" %>
         <% end %>        
-        <%= link_to 'Back', albums_path, class:"btn btn-xs btn-success" %>    
+        <%= link_to t('back'), albums_path, class:"btn btn-xs btn-success" %>    
       </p>      
     </div>
   </div>

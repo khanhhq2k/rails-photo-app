@@ -1,4 +1,4 @@
-<h1 align="center">Albums Index</h1>
+<h1 align="center"><%= t(".index_title")%></h1>
 <%= render partial: "album", object: @albums %>
 <div align="center">
   <%= paginate @albums %>

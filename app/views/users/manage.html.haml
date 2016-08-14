@@ -3,9 +3,9 @@
   %table.table.table-striped
     %thead
       %tr
-        %th Email
-        %th Name
-        %th Active?
+        %th= t ".email"
+        %th= t ".name"
+        %th= t ".active"
         %th{:colspan => "2"}
     %tbody#users
       = render @users

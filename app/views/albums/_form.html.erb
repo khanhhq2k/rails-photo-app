@@ -12,18 +12,12 @@
     <div class="form-group">
       <%= f.label :pictures, class: 'control-label' %>
       <div class="controls">
-        <!-- The magic is coming ...look at my eyes....shazammmm -->
-        <!-- Use HTML5 multiple attribute to enable multiple selection
-             and pass back to controller all files as an array, ready 
-             for paperclip!!
-             file_field_tag, since images is not a gallery attribute
-         -->
         <%= file_field_tag "images[]", type: :file, class: "form-control", multiple: true %>
       </div>
     </div>
     
     <div class="actions">
-      <%= f.submit "Submit", class: "btn btn-primary btn-lg" %>
+      <%= f.submit t("submit"), class: "btn btn-primary btn-lg" %>
     </div>
   <% end %>  
 </div>

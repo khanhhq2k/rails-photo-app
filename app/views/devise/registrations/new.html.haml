@@ -1,5 +1,5 @@
 .container.signup-form
-  %h2{:align => "center"} Sign Up User
+  %h2{:align => "center"}= t "devise.registrations.title"
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     = devise_error_messages!
     .form-group
@@ -22,5 +22,4 @@
       %br/
       = f.password_field :password_confirmation, autocomplete: "off", class: "form-control"
     .actions
-      = f.submit "Sign up", class: "btn btn-primary btn-lg signup-btn"
-  = render "devise/shared/links"
+      = f.submit t("signup"), class: "btn btn-primary btn-lg signup-btn"

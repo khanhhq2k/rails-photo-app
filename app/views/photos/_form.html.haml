@@ -14,9 +14,9 @@
       = f.file_field :image, class: "form-control"
     .radio-inline
       = f.radio_button :public, 'true', checked: true
-      = f.label :public, 'Public', value: 'true'
+      = f.label :public, t('public'), value: 'true'
       %br/
       = f.radio_button :public, 'false'
-      = f.label :public, 'Private', value: 'false'
+      = f.label :public, t('private'), value: 'false'
     .actions
-      = f.submit "Upload", class: "btn btn-primary btn-lg"
+      = f.submit t("upload"), class: "btn btn-primary btn-lg"
